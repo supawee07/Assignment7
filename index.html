@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ระบบฝาก ถอน และเช็คยอด ETH บน Sepolia Testnet">
+  <title>Sepolia Bank | Assignment 5</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="mark" aria-hidden="true">◇</span> Sepolia Bank</div>
+    <span class="network"><i></i> Sepolia Testnet</span>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow">ASSIGNMENT 05 / ETHEREUM DAPP</p>
+      <h1 id="title">ธนาคารบนบล็อกเชน</h1>
+      <p>ฝาก ถอน และเช็คยอดเงินด้วย MetaMask บนเครือข่าย Sepolia</p>
+    </section>
+    <div class="grid">
+      <section class="card balance" aria-labelledby="balance-title">
+        <p class="eyebrow">01 / ACCOUNT</p>
+        <h2 id="balance-title">ยอดเงินในธนาคาร</h2>
+        <div class="amount"><output id="balance">—</output> <span>ETH</span></div>
+        <p id="wallet" class="wallet">ยังไม่ได้เชื่อมต่อกระเป๋า</p>
+        <div class="buttons">
+          <button id="connect" type="button">เชื่อมต่อ MetaMask</button>
+          <button id="refresh" class="secondary" type="button" disabled>เช็คยอดเงิน</button>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="transfer-title">
+        <p class="eyebrow">02 / TRANSACTIONS</p>
+        <h2 id="transfer-title">ฝากหรือถอน ETH</h2>
+        <form id="transfer">
+          <label for="amount">จำนวน ETH</label>
+          <input id="amount" inputmode="decimal" autocomplete="off" placeholder="0.01" required>
+          <div class="buttons">
+            <button id="deposit" type="submit" value="deposit" disabled>ฝากเงิน</button>
+            <button id="withdraw" class="secondary" type="submit" value="withdraw" disabled>ถอนเงิน</button>
+          </div>
+        </form>
+      </section>
+    </div>
+    <div class="notice">
+      <p id="status" role="status">ตั้งค่า Infura และ Contract แล้วเชื่อมต่อ MetaMask</p>
+      <a id="tx" target="_blank" rel="noopener noreferrer" hidden>ดูธุรกรรมบน Etherscan ↗</a>
+    </div>
+    <details id="settings" class="card">
+      <summary>ตั้งค่า Infura, Contract และข้อมูลนักศึกษา</summary>
+      <form id="configuration">
+        <label for="infuraApiKey">Infura API Key สำหรับ Sepolia</label>
+        <input id="infuraApiKey" type="password" autocomplete="off" spellcheck="false" required>
+        <label for="address">Contract address จาก Remix</label>
+        <input id="address" placeholder="0x…" spellcheck="false" required>
+        <label for="abi">ABI จาก Remix (JSON)</label>
+        <textarea id="abi" rows="5" placeholder="วาง ABI ที่คัดลอกจาก Solidity Compiler" spellcheck="false" required></textarea>
+        <div class="grid">
+          <div><label for="studentId">รหัสนักศึกษา</label><input id="studentId"></div>
+          <div><label for="studentName">ชื่อ–สกุล</label><input id="studentName"></div>
+        </div>
+        <div class="buttons">
+          <button id="save" type="submit">บันทึกการตั้งค่า</button>
+          <a id="contractLink" target="_blank" rel="noopener noreferrer" hidden>ดู Contract บน Etherscan ↗</a>
+        </div>
+      </form>
+    </details>
+  </main>
+  <footer><span id="student">รหัสนักศึกษา — · ชื่อ–สกุล —</span><span>ETHEREUM / SEPOLIA</span></footer>
+</body>
+</html>
