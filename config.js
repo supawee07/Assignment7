@@ -1,7 +1,7 @@
 // Paste the deployed address and ABI copied from Remix to share this setup.
 export const defaults = {
   // วาง Infura API Key สำหรับ Sepolia เฉพาะค่าหลัง /v3/
-  infuraApiKey: "",
+  infuraApiKey: "405ad4eb29f44465876cf22703706db1",
   studentId: "",
   studentName: "",
   address: "0x1819a3452E536AbcBfBa8B5B0b5F7EBadb3cd24b",
